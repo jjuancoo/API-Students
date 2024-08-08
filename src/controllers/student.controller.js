@@ -12,9 +12,10 @@ export const getAll = async (req, res) => {
 };
 
 export const insertOne = (req, res) => {
-    studentDao.insertOne(req.body)
-    .then(student => {
-        res.json(student)
+  studentDao
+    .insertOne(req.body)
+    .then((student) => {
+      res.json(student);
     })
-    .catch(error => res.json({message: error}))
-}
+    .catch((error) => res.json({ message: error }));
+};
