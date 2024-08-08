@@ -11,4 +11,8 @@ studentDao.insertOne = async student => {
     return await Student.create(student)
 }
 
+studentDao.getOne = async id => {
+    return await Student.findOne({student_id: id})
+}
+
 export default studentDao;

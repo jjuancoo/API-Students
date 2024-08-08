@@ -19,3 +19,13 @@ export const insertOne = (req, res) => {
     })
     .catch((error) => res.json({ message: error }));
 };
+
+export const getOne = (req, res) => {
+    studentDao
+        .getOne(req.params.id)
+        .then(student => {
+            student != null ? res.json(student) : res.json({message: "Estudiante no encontrado"})
+            res.json(student)
+        })
+    .catch(error => console.log(error))
+}

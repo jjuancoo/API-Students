@@ -1,10 +1,11 @@
 import { Router } from 'express'
-import { getAll, insertOne } from '../controllers/student.controller.js'
+import { getAll, insertOne, getOne } from '../controllers/student.controller.js'
 
 const router = Router()
 
 router.get('/getAll', getAll)
 router.post('/insertOne', insertOne)
+router.get('/getOne/:id' , getOne)
 
 router.get('/sqrt/:num', (req, res) => {
     const { num } = req.params
