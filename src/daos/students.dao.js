@@ -7,4 +7,8 @@ studentDao.getAll = async () => {
   return await Student.find();
 };
 
+studentDao.insertOne = async student => {
+    return await Student.create(student)
+}
+
 export default studentDao;

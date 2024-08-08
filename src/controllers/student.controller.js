@@ -10,3 +10,11 @@ export const getAll = async (req, res) => {
       res.json({ message: error });
     });
 };
+
+export const insertOne = (req, res) => {
+    studentDao.insertOne(req.body)
+    .then(student => {
+        res.json(student)
+    })
+    .catch(error => res.json({message: error}))
+}
